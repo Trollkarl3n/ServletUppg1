@@ -6,7 +6,7 @@ import javax.servlet.http.*;
 import java.io.*;
 import java.sql.*;
 
-@WebServlet(urlPatterns = "/students")
+@WebServlet(urlPatterns = "/student")
 public class AllStudentsServlet extends HttpServlet {
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html");
