@@ -38,9 +38,9 @@ public class AllStudentsServlet extends HttpServlet {
             // Lägg till länkar till andra Servlets och startsidan
             out.println("<a href=\"index.html\">Till startsidan</a>");
             out.println("<br>");
-            out.println("<a href=\"servlet1\">Visa alla studenter och kurser</a>");
+            out.println("<a href=\"StudentCourseServlet.java\">Visa alla studenter och kurser</a>");
             out.println("<br>");
-            out.println("<a href=\"servlet3\">Visa alla kurser</a>");
+            out.println("<a href=\"AllCoursesServlet.java\">Visa alla kurser</a>");
 
             rs.close();
             stmt.close();

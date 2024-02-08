@@ -16,7 +16,7 @@ public class AllCoursesServlet extends HttpServlet {
         Connection conn = null;
         try {
             Class.forName("com.mysql.jdbc.Driver");
-            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/root", "root", "");
+            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/testgritacademy", "root", "");
 
             // Hämta data från databasen och skapa tabellen
             Statement stmt = conn.createStatement();
@@ -37,9 +37,9 @@ public class AllCoursesServlet extends HttpServlet {
             // Lägg till länkar till andra Servlets och startsidan
             out.println("<a href=\"index.html\">Till startsidan</a>");
             out.println("<br>");
-            out.println("<a href=\"servlet1\">Visa alla studenter och kurser</a>");
+            out.println("<a href=\"StudentCourseServlet.java\">Visa alla studenter och kurser</a>");
             out.println("<br>");
-            out.println("<a href=\"servlet2\">Visa alla elever</a>");
+            out.println("<a href=\"AllStudentsServlet.java\">Visa alla elever</a>");
 
             rs.close();
             stmt.close();
