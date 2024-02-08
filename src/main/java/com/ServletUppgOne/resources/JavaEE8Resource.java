@@ -1,4 +1,4 @@
-package com.TestServletEight.TestServletEight.resources;
+package com.ServletUppgOne.resources;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;

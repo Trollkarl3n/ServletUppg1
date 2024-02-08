@@ -1,4 +1,4 @@
-package com.TestServletEight.TestServletEight.Servlets;
+package com.ServletUppgOne.Servlets;
 
 import javax.servlet.*;
 import javax.servlet.annotation.WebServlet;
@@ -6,8 +6,8 @@ import javax.servlet.http.*;
 import java.io.*;
 import java.sql.*;
 
-@WebServlet(urlPatterns = "/students")
-public class AllStudentsServlet extends HttpServlet {
+@WebServlet(urlPatterns = "/course")
+public class AllCoursesServlet extends HttpServlet {
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html");
         PrintWriter out = response.getWriter();
@@ -16,21 +16,20 @@ public class AllStudentsServlet extends HttpServlet {
         Connection conn = null;
         try {
             Class.forName("com.mysql.jdbc.Driver");
-            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/testgritacademy", "root", "");
+            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/root", "root", "");
 
             // Hämta data från databasen och skapa tabellen
             Statement stmt = conn.createStatement();
-            ResultSet rs = stmt.executeQuery("SELECT * FROM students");
+            ResultSet rs = stmt.executeQuery("SELECT * FROM courses");
 
             out.println("<table>");
-            out.println("<tr><th>ID</th><th>Förnamn</th><th>Efternamn</th><th>Stad</th><th>Hobby</th></tr>");
+            out.println("<tr><th>ID</th><th>Namn</th><th>YHP</th><th>Beskrivning</th></tr>");
             while (rs.next()) {
                 out.println("<tr>");
                 out.println("<td>" + rs.getInt("id") + "</td>");
-                out.println("<td>" + rs.getString("Fname") + "</td>");
-                out.println("<td>" + rs.getString("Lname") + "</td>");
-                out.println("<td>" + rs.getString("city") + "</td>");
-                out.println("<td>" + rs.getString("hobby") + "</td>");
+                out.println("<td>" + rs.getString("name") + "</td>");
+                out.println("<td>" + rs.getInt("YHP") + "</td>");
+                out.println("<td>" + rs.getString("description") + "</td>");
                 out.println("</tr>");
             }
             out.println("</table>");
@@ -40,7 +39,7 @@ public class AllStudentsServlet extends HttpServlet {
             out.println("<br>");
             out.println("<a href=\"servlet1\">Visa alla studenter och kurser</a>");
             out.println("<br>");
-            out.println("<a href=\"servlet3\">Visa alla kurser</a>");
+            out.println("<a href=\"servlet2\">Visa alla elever</a>");
 
             rs.close();
             stmt.close();

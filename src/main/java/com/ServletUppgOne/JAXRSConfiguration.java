@@ -1,4 +1,4 @@
-package com.TestServletEight.TestServletEight;
+package com.ServletUppgOne;
 
 import javax.ws.rs.ApplicationPath;
 import javax.ws.rs.core.Application;

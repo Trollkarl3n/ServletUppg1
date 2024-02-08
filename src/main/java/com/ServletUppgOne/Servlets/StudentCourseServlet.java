@@ -1,4 +1,4 @@
-package com.TestServletEight.TestServletEight.Servlets;
+package com.ServletUppgOne.Servlets;
 
 import javax.servlet.*;
 import javax.servlet.annotation.WebServlet;
