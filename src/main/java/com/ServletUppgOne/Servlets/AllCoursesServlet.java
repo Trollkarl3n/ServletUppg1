@@ -39,7 +39,7 @@ public class AllCoursesServlet extends HttpServlet {
             out.println("<br>");
             out.println("<a href=\"studentcourse\">Visa alla studenter och kurser</a>");
             out.println("<br>");
-            out.println("<a href=\"student\">Visa alla elever</a>");
+            out.println("<a href=\"students\">Visa alla elever</a>");
 
             rs.close();
             stmt.close();
