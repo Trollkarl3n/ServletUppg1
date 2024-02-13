@@ -16,7 +16,7 @@ public class StudentCourseServlet extends HttpServlet {
         Connection conn = null;
         try {
             Class.forName("com.mysql.jdbc.Driver");
-            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/testgritacademy", "root", "");
+            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/testgritacademy", "User", "");
 
             // Hämta data från databasen och skapa tabellen
             Statement stmt = conn.createStatement();
